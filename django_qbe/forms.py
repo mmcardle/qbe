@@ -5,7 +5,7 @@ import collections
 from django import forms
 from django.db import connections
 from django.db.models.fields import Field
-from django.core.urlresolvers import reverse, NoReverseMatch
+from django.urls import reverse, NoReverseMatch
 from django.conf import settings
 from django.forms.formsets import BaseFormSet, formset_factory
 
