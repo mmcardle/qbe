@@ -10,7 +10,7 @@ from django.conf import settings
 from django.forms.formsets import BaseFormSet, formset_factory
 
 from importlib import import_module
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 
 from django_qbe.operators import CustomOperator, BACKEND_TO_OPERATIONS
 from django.apps import apps as django_apps

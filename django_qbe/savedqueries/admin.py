@@ -29,6 +29,9 @@ class SavedQueryAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'date_created', 'query_hash',
                     'run_link')
 
+    @admin.display(
+        description=_("query")
+    )
     def run_link(self, obj):
         info = (QBE_ADMIN,
                 self.model._meta.app_label,
@@ -38,7 +41,6 @@ class SavedQueryAdmin(admin.ModelAdmin):
                 (reverse("%s:%s_%s_run" % info, args=(obj.pk,)), _("Run"),
                  reverse("qbe_form", kwargs={'query_hash': obj.pk}),
                  _("Edit")))
-    run_link.short_description = _("query")
 
     def get_urls(self):
         def wrap(view):
