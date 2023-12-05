@@ -435,7 +435,7 @@ def autocomplete_graph(admin_site, current_models, directed=False):
 def pickle_encode(session_dict):
     "Returns the given session dictionary pickled and encoded as a string."
     pickled = pickle.dumps(session_dict, pickle.HIGHEST_PROTOCOL)
-    return base64.encodestring(pickled + get_query_hash(pickled).encode())
+    return base64.b64encode(pickled + get_query_hash(pickled).encode())
 
 
 # Adapted from django.contrib.sessions.backends.base
